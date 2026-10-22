@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+*.log
+.sites-runtime/
+.qa/
+sepehri.html
+
+.openai/
+.vercel/
+.env
+.env.*

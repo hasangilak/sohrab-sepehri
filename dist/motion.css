@@ -1,0 +1,124 @@
+#watercolor-world{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.6s ease}
+.webgl-ready #watercolor-world{opacity:1}
+.webgl-ready .painting,.webgl-ready .moon{opacity:0!important;visibility:hidden}
+.webgl-ready .wash{background:linear-gradient(90deg,var(--paper) 12%,var(--paper) 29%,color-mix(in srgb,var(--paper),transparent 18%) 36%,transparent 53%);transition:opacity 1.2s}
+.webgl-ready .landscape{background:radial-gradient(ellipse at 70% 10%,color-mix(in srgb,var(--paper),white 40%),var(--paper) 65%)}
+.paper-grain{position:absolute;inset:0;opacity:.055;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.5' filter='url(%23n)'/%3E%3C/svg%3E")}
+.hero .chapter-inner{animation:poem-arrives 1.6s ease both;animation-delay:.2s;max-width:480px}
+.hero h1{font-size:clamp(65px,5.7vw,100px)}
+.hero-byline{margin-bottom:33px}
+.hero-quote{max-width:330px}
+.hero .landscape-note{display:none}
+.passage .chapter-inner{opacity:1;transform:none;transition:none}
+.poem-line{display:block;will-change:filter,opacity;transform-origin:left center}
+.poetry{white-space:normal}
+#reader-poem .poem-line{filter:none!important;opacity:1!important;transform:none!important;will-change:auto}
+.open-landscape{position:fixed;right:7.2vw;top:68%;z-index:5;display:flex;align-items:center;gap:12px;padding:11px 18px;background:color-mix(in srgb,var(--paper),transparent 12%);border:1px solid color-mix(in srgb,var(--line),transparent 65%);backdrop-filter:blur(8px);font-family:var(--serif);font-size:17px;transition:opacity .5s,transform .5s}
+.landscape-dot{height:4px;width:4px;border-radius:50%;background:currentColor;position:relative}
+.landscape-dot:after{content:'';position:absolute;inset:-7px;border:1px solid currentColor;border-radius:50%;opacity:0;transform:scale(.6);transition:opacity .4s,transform .4s}
+.open-landscape:hover .landscape-dot:after{opacity:.4;transform:scale(1.2)}
+.landscape-plus{font-family:var(--sans);font-size:20px;margin-left:10px;opacity:.5;transition:transform .6s}
+.open-landscape:hover .landscape-plus{transform:rotate(90deg)}
+.paint-cursor{position:fixed;top:0;left:0;width:0;height:0;z-index:60;pointer-events:none;opacity:0;transition:opacity .5s}
+.paint-cursor.visible{opacity:1}
+.paint-cursor span{position:absolute;left:-19px;top:-19px;width:38px;height:38px;border:1px solid color-mix(in srgb,var(--ink),transparent 82%);border-radius:50%;transition:transform .6s,border-color .6s}
+.paint-cursor.over-action span{transform:scale(1.2);border-color:color-mix(in srgb,var(--ink),transparent 85%)}
+.paint-cursor:after{content:'';position:absolute;left:-2px;top:-2px;width:4px;height:4px;border-radius:50%;background:var(--ink);opacity:.4}
+.landscape-view{position:fixed;inset:0;z-index:9;pointer-events:none;opacity:0;transition:opacity .8s}
+.landscape-back{position:absolute;left:4.8vw;top:135px;display:flex;align-items:center;gap:18px;font-size:10px;padding:15px 0}
+.landscape-back>span:first-child{display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;width:38px;height:38px;font-size:17px}
+.landscape-caption{position:absolute;top:16vh;left:50%;transform:translateX(-50%);text-align:center;white-space:nowrap}
+.landscape-caption p{font:italic 35px/1.3 var(--serif);margin:10px 0 18px}
+.landscape-instruction{font-size:9px;color:var(--muted)}
+main,.experience-footer{transition:opacity .8s,filter 1s}
+.landscape-expanded main,.landscape-expanded .experience-footer{opacity:0;filter:blur(8px);pointer-events:none}
+.landscape-expanded .open-landscape{opacity:0;pointer-events:none;transform:translateY(10px)}
+.landscape-expanded .landscape-view{opacity:1;pointer-events:auto}
+.landscape-expanded .wash{opacity:0}
+.landscape-expanded .site-header nav{opacity:.55}
+.fa-mode .open-landscape,.fa-mode .landscape-back,.fa-mode .landscape-caption p{font-family:Vazir;letter-spacing:0;font-style:normal}
+.fa-mode .landscape-caption p{font-size:27px}
+.motion-paused .paint-cursor{display:none}
+@keyframes poem-arrives{from{opacity:0;filter:blur(12px);transform:translateY(18px)}to{opacity:1;filter:blur(0);transform:translateY(0)}}
+@media(min-width:1600px){.hero .chapter-inner{max-width:480px}.chapter-inner{width:500px}.poetry{font-size:37px}}
+@media(max-width:1000px){.open-landscape{right:4vw;font-size:15px;top:75%}.open-landscape .landscape-plus{display:none}}
+@media(max-width:650px){.hero h1{font-size:74px}.hero .chapter-inner{max-width:100%}.hero{padding-top:140px}.hero-byline{margin-bottom:26px}.hero-quote{max-width:250px}.webgl-ready .wash{background:linear-gradient(180deg,var(--paper) 25%,color-mix(in srgb,var(--paper),transparent 4%) 42%,color-mix(in srgb,var(--paper),transparent 55%) 59%,transparent 78%)}.open-landscape{font-size:14px;right:28px;top:auto;bottom:110px;gap:9px;background:color-mix(in srgb,var(--paper),transparent 30%);padding:10px 12px}.paint-cursor{display:none}.passage .chapter-inner{background:none}.passage .poetry{background:linear-gradient(90deg,color-mix(in srgb,var(--paper),transparent 15%),transparent 100%)}.landscape-back{left:25px;top:106px}.landscape-caption{width:100%;padding:0 24px;white-space:normal;top:auto;bottom:7vh}.landscape-caption p{font-size:29px}.landscape-instruction{display:none}.fa-mode .hero h1{font-size:51px}.fa-mode .open-landscape{font-size:12px}.fa-mode .landscape-caption p{font-size:22px}}
+@media(max-width:360px){.hero h1{font-size:66px}.hero{padding-top:135px}.open-landscape{right:18px;bottom:99px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.paint-cursor{display:none}.poem-line{filter:none!important;opacity:1!important;transform:none!important}.hero .chapter-inner{animation:none}.landscape-view,main,#watercolor-world{transition:none}}
+
+.webgl-ready .landscape{background:radial-gradient(ellipse at 70% 20%,var(--sky,#faf8f4),var(--paper) 70%)}
+.palette-ready{transition:none}
+
+.chapter{user-select:none}.chapter-inner{user-select:text}
+
+.landscape-view{touch-action:none;cursor:grab;user-select:none}
+.landscape-view.dragging{cursor:grabbing}
+.landscape-caption{pointer-events:none}
+.landscape-zoom{position:absolute;bottom:8vh;right:4.8vw;display:flex;align-items:center;gap:7px;padding:5px;border:1px solid var(--line);background:color-mix(in srgb,var(--paper),transparent 8%);border-radius:30px}
+.landscape-zoom button{height:36px;min-width:36px;border-radius:50%;font-size:22px;line-height:1}
+.landscape-zoom button:hover{background:color-mix(in srgb,var(--ink),transparent 93%)}
+.landscape-zoom #zoom-reset{font:10px var(--sans);padding:0 12px;border-radius:0}
+body:not(.webgl-ready) .landscape-zoom{display:none}
+@media(max-width:650px){.landscape-zoom{bottom:3vh;right:50%;transform:translateX(50%)}.landscape-caption{bottom:13vh}.landscape-instruction{display:block;font-size:8px}.fa-mode .landscape-zoom #zoom-reset{font-family:Vazir}}
+.landscape-zoom{width:max-content}
+.landscape-zoom #zoom-reset{white-space:nowrap}
+@media(max-width:650px){
+  .landscape-caption{top:25vh;bottom:auto}
+  .landscape-caption p{font-size:27px}
+  .hero .attribution,.hero .begin-link{width:fit-content;padding:5px 8px;margin-left:-8px;background:color-mix(in srgb,var(--paper),transparent 8%)}
+}
+
+/* Persian shares one reading edge; Vazir has its own measured type scale. */
+.fa-mode .chapter-inner,.fa-mode .passage[data-index="11"] .chapter-inner{width:min(420px,28vw);max-width:none;left:0;direction:rtl;text-align:right;font-family:Vazir,serif}
+.fa-mode .hero h1{font-size:clamp(48px,4.4vw,72px);line-height:1.6;letter-spacing:0;margin-bottom:18px}
+.fa-mode .hero-byline{font-size:21px;margin-bottom:24px}
+.fa-mode .hero-quote{font-size:21px;line-height:1.9;max-width:100%;margin-left:0;margin-right:0}
+.fa-mode .poetry{font-size:clamp(21px,1.55vw,27px);line-height:2;letter-spacing:0;text-wrap:pretty}
+.fa-mode .poem-line{direction:rtl;text-align:right;transform-origin:right center;unicode-bidi:isolate}
+.fa-mode .passage[data-index="11"] .poetry{font-size:clamp(27px,2.2vw,37px);line-height:1.8}
+.fa-mode .passage-label{gap:16px;margin-bottom:22px}
+.fa-mode .passage-label .number{direction:ltr;unicode-bidi:isolate}
+.fa-mode .eyebrow[data-fa]{font-size:13px;line-height:1.8}
+.fa-mode .attribution,.fa-mode .begin-link{font-size:14px;letter-spacing:0}
+.fa-mode .passage .end-mark{margin-inline:0 auto}
+.fa-mode .ending h2{font-size:clamp(46px,3.8vw,62px);line-height:1.65;letter-spacing:0;margin:20px 0}
+.fa-mode .ending-copy{font-size:20px;line-height:2}
+.fa-mode .ending-actions{gap:24px;flex-wrap:wrap;justify-content:flex-start}
+.fa-mode .ending-actions .text-link{font-family:Vazir,serif;font-size:14px;line-height:1.8;white-space:nowrap}
+.fa-mode .scroll-cue,.fa-mode #chapter-name,.fa-mode #sound-label,.fa-mode .landscape-instruction,.fa-mode #zoom-reset{font-family:Vazir,serif;font-size:12px;letter-spacing:0}
+.fa-mode .landscape-caption{direction:rtl}
+.fa-mode .landscape-caption .eyebrow{font-size:13px}
+.fa-mode .landscape-caption p{font-size:34px;line-height:1.6}
+.fa-mode .open-landscape{font-size:17px}
+.fa-mode .landscape-back{font-size:15px}
+.fa-mode .reader-intro h2{font-size:64px;line-height:1.5;letter-spacing:0}
+.fa-mode .reader-intro>p:not(.eyebrow){font-family:Vazir,serif;font-size:25px;line-height:1.8;max-width:none}
+.fa-mode .reader-stanza .poetry{font-size:23px;line-height:2}
+.fa-mode .reader-stanza .stanza-number{top:44px}
+.fa-mode .reader-tools{direction:ltr;justify-content:flex-end}
+@media(min-width:651px){.fa-mode .chapter{padding-left:4.8vw}}
+@media(max-width:1000px) and (min-width:651px){
+ .fa-mode .chapter-inner,.fa-mode .passage[data-index="11"] .chapter-inner{width:42vw}
+ .fa-mode .hero h1{font-size:60px}
+ .fa-mode .poetry{font-size:25px}
+}
+@media(max-width:650px){
+ .fa-mode .chapter-inner,.fa-mode .passage[data-index="11"] .chapter-inner{width:100%;max-width:470px;left:0}
+ .fa-mode .hero{padding-top:125px}
+ .fa-mode .hero h1{font-size:48px;line-height:1.45}
+ .fa-mode .hero-byline{font-size:20px;margin-bottom:16px}
+ .fa-mode .hero-quote{font-size:18px;max-width:none;line-height:1.9}
+ .fa-mode .hero .attribution,.fa-mode .hero .begin-link{margin-right:-8px;margin-left:0;font-size:12px}
+ .fa-mode .hero .begin-link{margin-top:16px}
+ .fa-mode .poetry{font-size:20px;line-height:2}
+ .fa-mode .passage[data-index="11"] .poetry{font-size:27px;line-height:1.8}
+ .fa-mode .ending h2{font-size:48px;line-height:1.55}
+ .fa-mode .ending-copy{font-size:19px}
+ .fa-mode .ending-actions{gap:14px 20px;margin-top:25px}
+ .fa-mode .ending-actions .text-link{font-size:13px}
+ .fa-mode .open-landscape{font-size:16px}
+ .fa-mode .scroll-cue,.fa-mode #sound-label{font-size:10px}
+ .fa-mode .landscape-caption p{font-size:29px}
+ .fa-mode .landscape-instruction{font-size:12px}
+ .fa-mode .reader-stanza .poetry{font-size:20px;line-height:2}
+}

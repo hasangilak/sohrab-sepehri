@@ -1,0 +1,11 @@
+{
+  "name": "sepehri-experience",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "export": "node scripts/export-standalone.mjs",
+    "check": "node --check dist/app.js && node --check dist/poem.js && node --check dist/landscape.js && node --check dist/brush.js && node --check server.mjs"
+  }
+}
